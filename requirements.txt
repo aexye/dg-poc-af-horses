@@ -1,3 +1,4 @@
 s3fs
 st-files-connection
 xgboost
+scikit-learn
