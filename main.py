@@ -85,7 +85,7 @@ predictions.index = data.index
 data['probability'] = predictions.iloc[:, 0]
 # Normalize probabilities within each race to ensure they sum to 1
 data['prob_final'] = data['probability'] / data.groupby('race_id')['probability'].transform('sum')
-data['prediction (win chance in %)'] = (prob_final * 100).round(2)
+data['prediction (win chance in %)'] = (data['prob_final'] * 100).round(2)
 
 # Style the DataFrame for display with percentage sign
 styled_data = data.style.format({'prediction (win chance in %)': '{:.2f}%'})
