@@ -96,7 +96,7 @@ if selected:
         data_display = race_df[race_df['race_name'] == race]
         race_date = data_display['date'].iloc[0].strftime('%Y-%m-%d')
         city = data_display['city'].iloc[0]
-        data_display = data_display.drop(columns=['city', 'date', 'race_name'])
+        data_display = data_display[['horse', 'jockey', 'trainer', 'prediction (win chance in %)']].reset_index(drop=True)
         st.markdown(f"### {race}")
         st.markdown(f"**Date:** {race_date} | **City:** {city}")
         data_display.index += 1
