@@ -99,6 +99,7 @@ if selected:
         data_display = data_display.drop(columns=['city', 'date', 'race_name'])
         st.markdown(f"### {race}")
         st.markdown(f"**Date:** {race_date} | **City:** {city}")
+        data_display.index += 1
         st.dataframe(data_display)
         st.markdown("---")
 else:
